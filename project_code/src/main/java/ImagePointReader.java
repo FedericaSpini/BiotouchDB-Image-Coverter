@@ -10,11 +10,11 @@ import java.io.Reader;
  */
 public class ImagePointReader {
 
-    public Object readSingleJson(String path){
+    public JSONDocRepresentation readSingleJson(String path){
         Gson gson = new Gson();
         try(Reader reader = new FileReader(path)){
             // Convert JSON File to Java Object
-            Object staff = gson.fromJson(reader, Object.class);
+            JSONDocRepresentation staff = gson.fromJson(reader, JSONDocRepresentation.class);
 
             // print staff
             System.out.println(staff);
@@ -28,7 +28,7 @@ public class ImagePointReader {
 
     public static void main(String[] args){
         ImagePointReader i = new ImagePointReader();
-        Object o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");
+        JSONDocRepresentation o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");
     }
 
 
