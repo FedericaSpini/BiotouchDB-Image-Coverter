@@ -29,6 +29,11 @@ public class ImagePointReader {
     public static void main(String[] args){
         ImagePointReader i = new ImagePointReader();
         JSONDocRepresentation o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");
+        System.out.println(o);
+        System.out.println(o.getSessionData().getDeviceData().getWidthPixels() +" "+
+                o.getSessionData().getDeviceData().getHeigthPixels());
+        ImageCreator imageCreator = ImageCreator.getInstance();
+        imageCreator.createImage(o);
     }
 
 

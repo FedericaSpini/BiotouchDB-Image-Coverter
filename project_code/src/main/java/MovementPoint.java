@@ -7,6 +7,9 @@ public class MovementPoint implements Serializable
     private Float x;
     private Float y;
 
+    public SampledPoint getSampledPoint(){
+        return new SampledPoint(x, y);
+    }
 
     public Integer getTime() {return time;}
 
@@ -23,5 +26,6 @@ public class MovementPoint implements Serializable
     public Float getY() {return y;}
 
     public void setY(Float y) {this.y = y;}
+
 
 }

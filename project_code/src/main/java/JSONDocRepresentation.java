@@ -1,9 +1,12 @@
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class JSONDocRepresentation implements Serializable {
     private String date;
     private MovementPoint[] movementPoints;
-    private MovementPoint[][] sampledPoints;
+    private SampledPoint[][] sampledPoints;
     private SessionData sessionData;
     private MovementPoint[] touchDownPoints;
     private MovementPoint[] touchUpPoints;
@@ -17,9 +20,9 @@ public class JSONDocRepresentation implements Serializable {
 
     public void setMovementPoints(MovementPoint[] movementPoints) {this.movementPoints = movementPoints;}
 
-    public MovementPoint[][] getSampledPoints() {return sampledPoints;}
+    public SampledPoint[][] getSampledPoints() {return sampledPoints;}
 
-    public void setSampledPoints(MovementPoint[][] sampledPoints) {this.sampledPoints = sampledPoints;}
+    public void setSampledPoints(SampledPoint[][] sampledPoints) {this.sampledPoints = sampledPoints;}
 
     public SessionData getSessionData() {return sessionData;}
 
@@ -36,4 +39,29 @@ public class JSONDocRepresentation implements Serializable {
     public Integer getWordNumber() {return wordNumber;}
 
     public void setWordNumber(Integer wordNumber) {this.wordNumber = wordNumber;}
+
+    @Override
+    public String toString(){
+        String res = "\n\n\n";
+        res+= date + " \n";
+        res += "I movement points di questa parola sono: " + movementPoints.length + "\n";
+        res += "I sample points di questa parola sono: " + sampledPoints.length + "\n";
+        res += "I touch_down points di questa parola sono: " + touchDownPoints.length + "\n";
+        res += "I touch_up points di questa parola sono: " + touchUpPoints.length + "\n";
+        res += "Parola # "+wordNumber;
+        return res;
+    }
+
+    public ArrayList<SampledPoint> getAllPoints(){
+        ArrayList<SampledPoint> res = new ArrayList<SampledPoint>();
+
+        for(SampledPoint[] sampledPointsList: this.sampledPoints){
+            Collections.addAll(res, sampledPointsList);
+        }
+
+        for(MovementPoint movementPoint: this.movementPoints){
+            res.add(movementPoint.getSampledPoint());
+        }
+        return res;
+    }
 }
