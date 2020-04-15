@@ -33,7 +33,7 @@ public class ImagePointReader {
         System.out.println(o.getSessionData().getDeviceData().getWidthPixels() +" "+
                 o.getSessionData().getDeviceData().getHeigthPixels());
         ImageCreator imageCreator = ImageCreator.getInstance();
-        imageCreator.createImage(o);
+        imageCreator.createImageFromJson(o);
     }
 
 
