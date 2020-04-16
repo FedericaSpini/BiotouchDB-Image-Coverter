@@ -79,15 +79,26 @@ public class ImageCreator
                 int newY = Math.round(point.getY());
                 if(Math.abs(oldX-newX)==1){
                     if (oldX>newX){
-                        g2.drawLine(oldX, oldY, oldX, newY/2);
-                        g2.drawLine(newX, newY/2, newX, newY/2);
-                    }
-                    else{
-                        g2.drawLine(oldX, oldY, oldX, newY/2);
-                        g2.drawLine(newX, newY/2, newX, newY/2);
+                        if(oldX>newX){
+                            g2.drawLine(oldX, oldY, oldX, oldY-((oldY-newY)/2));
+                            g2.drawLine(newX ,oldY-((oldY-newY)/2), newX, newY);
+                        }
+                        else  {
+                            g2.drawLine(oldX, oldY, oldX, oldY+((newY-oldY)/2));
+                            g2.drawLine(newX, oldY+((newY-oldY)/2), newX, newY);
+                        }
                 } }
                 else if (Math.abs(oldY-newY)==1){
-                    System.out.format("true %d, %d, %d, %d\n",Math.round(oldX), Math.round(oldY), Math.round(newX), Math.round(newY) );
+                    if (oldY>newY){
+                        if(oldX>newX){
+                            g2.drawLine(oldX, oldY, oldX-((oldX-newX)/2), oldY);
+                            g2.drawLine(oldX-((oldX-newX)/2) ,newY, newX, newY);
+                        }
+                        else  {
+                            g2.drawLine(oldX, oldY, oldX+((newX-oldX)/2), oldY);
+                            g2.drawLine(oldX+((newX-oldX)/2), newY, newX, newY);
+                        }
+                    }
                 } else{
                     g2.drawLine(Math.round(oldX), Math.round(oldY), Math.round(newX), Math.round(newY));
                     }
