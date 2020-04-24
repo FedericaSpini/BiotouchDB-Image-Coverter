@@ -1,3 +1,5 @@
+package dataStructures;
+
 import java.io.Serializable;
 
 public class DeviceData implements Serializable {
