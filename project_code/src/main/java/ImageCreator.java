@@ -1,12 +1,16 @@
+import dataStructures.DeviceData;
+import dataStructures.SampledPoint;
+import dataStructures.MovementPoint;
+import dataStructures.SessionData;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class ImageCreator
 {
@@ -19,7 +23,12 @@ public class ImageCreator
         return instance;
     }
 
-    public void createPointImage(JSONDocRepresentation jsonImg, BufferedImage img, Graphics2D g2){
+    /**
+     * Plots the points' coordinates couples on the given image
+     * @param jsonImg contains the points coordinates
+     * @param img
+     */
+    public void createPointImage(JSONDocRepresentation jsonImg, BufferedImage img){
         ArrayList<SampledPoint[]> strokes = new ArrayList<>(Arrays.asList(jsonImg.getSampledPoints()));
         for (SampledPoint[] stroke: strokes){
             ArrayList<SampledPoint> points = new ArrayList<>(Arrays.asList(stroke));
@@ -32,10 +41,14 @@ public class ImageCreator
                 img.setRGB(Math.round(point.getX()), Math.round(point.getY()), color);
             }
         }
-
     }
 
-    public void createStrokeImage(JSONDocRepresentation jsonImg, BufferedImage img, Graphics2D g2) {
+    /**
+     * Plots the segments that links the points' coordinates couples on the given image related to g2's image
+     * @param jsonImg contains the points coordinates
+     * @param g2
+     */
+    public void createStrokeImage(JSONDocRepresentation jsonImg, Graphics2D g2) {
         ArrayList<SampledPoint[]> strokes = new ArrayList<>(Arrays.asList(jsonImg.getSampledPoints()));
         for (SampledPoint[] stroke : strokes) {
             ArrayList<SampledPoint> points = new ArrayList<>(Arrays.asList(stroke));
@@ -44,69 +57,44 @@ public class ImageCreator
             for (SampledPoint point : points) {
                 g2.setColor(Color.BLACK);
                 g2.drawLine(Math.round(oldpoint.getX()), Math.round(oldpoint.getY()), Math.round(point.getX()), Math.round(point.getY()));
-
+                //drawLine method has problems when the second point is higher than the first one, so the segment id drawn bidirectionally
+                g2.drawLine(Math.round(point.getX()), Math.round(point.getY()), Math.round(oldpoint.getX()), Math.round(oldpoint.getY()));
                 oldpoint = point;
             }
         }
     }
-    //TODO continua
-    public void createStrokeModuledImage(JSONDocRepresentation jsonImg, BufferedImage img, Graphics2D g2, int modul) {
-        ArrayList<SampledPoint[]> strokes = new ArrayList<>(Arrays.asList(jsonImg.getSampledPoints()));
+
+    /**
+     * Plots the segments that links the points' coordinates couples on the given image related to g2's image
+     * @param jsonImg contains the points coordinates
+     * @param g2
+     * @param module
+     */
+    public void createStrokeImage(JSONDocRepresentation jsonImg,Graphics2D g2, int module) {
+        ArrayList<SampledPoint[]> strokes =new ArrayList<>(Arrays.asList(jsonImg.getSampledPoints()));
         for (SampledPoint[] stroke : strokes) {
             ArrayList<SampledPoint> points = new ArrayList<>(Arrays.asList(stroke));
             SampledPoint oldpoint = points.get(0);
 
+            int c = 0;
             for (SampledPoint point : points) {
-                g2.setColor(Color.BLACK);
-                g2.drawLine(Math.round(oldpoint.getX()), Math.round(oldpoint.getY()), Math.round(point.getX()), Math.round(point.getY()));
+                c++;
+                if (c%module==0) {
+                    g2.setColor(Color.BLACK);
+                    g2.drawLine(Math.round(oldpoint.getX()), Math.round(oldpoint.getY()), Math.round(point.getX()), Math.round(point.getY()));
+                    //drawLine method has problems when the second point is higher than the first one, so the segment id drwn bidirectionally
+                    g2.drawLine(Math.round(point.getX()), Math.round(point.getY()), Math.round(oldpoint.getX()), Math.round(oldpoint.getY()));
 
-                oldpoint = point;
-            }
-        }
-    }
-    public void createBalancedStrokeImage(JSONDocRepresentation jsonImg, BufferedImage img, Graphics2D g2) {
-
-        ArrayList<SampledPoint[]> strokes = new ArrayList<>(Arrays.asList(jsonImg.getSampledPoints()));
-        for (SampledPoint[] stroke : strokes) {
-            ArrayList<SampledPoint> points = new ArrayList<>(Arrays.asList(stroke));
-            SampledPoint oldpoint = points.get(0);
-
-            for (SampledPoint point : points) {
-                g2.setColor(Color.BLACK);
-                int oldX = Math.round(oldpoint.getX());
-                int oldY = Math.round(oldpoint.getY());
-                int newX = Math.round(point.getX());
-                int newY = Math.round(point.getY());
-                if(Math.abs(oldX-newX)==1){
-                    if (oldX>newX){
-                        if(oldX>newX){
-                            g2.drawLine(oldX, oldY, oldX, oldY-((oldY-newY)/2));
-                            g2.drawLine(newX ,oldY-((oldY-newY)/2), newX, newY);
-                        }
-                        else  {
-                            g2.drawLine(oldX, oldY, oldX, oldY+((newY-oldY)/2));
-                            g2.drawLine(newX, oldY+((newY-oldY)/2), newX, newY);
-                        }
-                } }
-                else if (Math.abs(oldY-newY)==1){
-                    if (oldY>newY){
-                        if(oldX>newX){
-                            g2.drawLine(oldX, oldY, oldX-((oldX-newX)/2), oldY);
-                            g2.drawLine(oldX-((oldX-newX)/2) ,newY, newX, newY);
-                        }
-                        else  {
-                            g2.drawLine(oldX, oldY, oldX+((newX-oldX)/2), oldY);
-                            g2.drawLine(oldX+((newX-oldX)/2), newY, newX, newY);
-                        }
-                    }
-                } else{
-                    g2.drawLine(Math.round(oldX), Math.round(oldY), Math.round(newX), Math.round(newY));
-                    }
-                oldpoint = point;
+                    oldpoint = point;
+                }
             }
         }
     }
 
+    /**
+     * Given an image representation, creates the corrispondent image file
+     * @param jsonImg
+     */
     public void createImageFromJson(JSONDocRepresentation jsonImg){
         try {
             int w = jsonImg.getSessionData().getDeviceData().getWidthPixels();
@@ -123,17 +111,14 @@ public class ImageCreator
                     img.setRGB(i, j, color);
                 }
             }
-            createPointImage( jsonImg,  img,  g2);
-            File output = new File("saved_point.png");
-            ImageIO.write(img, "bmp", output);
 
-            createStrokeImage( jsonImg,  img,  g2);
-            File output2 = new File("saved_stroke.png");
-            ImageIO.write(img, "bmp", output2);
-
-            createBalancedStrokeImage( jsonImg,  img,  g2);
-            File output3 = new File("saved_balanced_stroke.png");
-            ImageIO.write(img, "bmp", output3);
+            //CHANGE THIS METHOD ACCORDING TO THE ONE TO CHANGE THE IMAGE CREATION MODALITIES
+            createStrokeImage( jsonImg, g2);
+            File output1 = new File("stroke_img.png");
+            ImageIO.write(img, "bmp", output1);
+//            createStrokeImage( jsonImg, g2,5);
+//            File output2 = new File("stroke_modulo10_img.png");
+//            ImageIO.write(img, "bmp", output2);
 
         } catch (IOException e) {
             e.printStackTrace();

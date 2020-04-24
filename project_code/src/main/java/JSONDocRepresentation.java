@@ -1,7 +1,11 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+
+import dataStructures.DeviceData;
+import dataStructures.SampledPoint;
+import dataStructures.MovementPoint;
+import dataStructures.SessionData;
 
 public class JSONDocRepresentation implements Serializable {
     private String date;
