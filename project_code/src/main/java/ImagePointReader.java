@@ -15,9 +15,6 @@ public class ImagePointReader {
         try(Reader reader = new FileReader(path)){
             // Convert JSON File to Java Object
             JSONDocRepresentation staff = gson.fromJson(reader, JSONDocRepresentation.class);
-
-            // print staff
-            System.out.println(staff);
             return staff;
         }
         catch(IOException e ){
@@ -28,10 +25,7 @@ public class ImagePointReader {
 
     public static void main(String[] args){
         ImagePointReader i = new ImagePointReader();
-        JSONDocRepresentation o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");
-        System.out.println(o);
-        System.out.println(o.getSessionData().getDeviceData().getWidthPixels() +" "+
-                o.getSessionData().getDeviceData().getHeigthPixels());
+        JSONDocRepresentation o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");;
         ImageCreator imageCreator = ImageCreator.getInstance();
         imageCreator.createImageFromJson(o);
     }
