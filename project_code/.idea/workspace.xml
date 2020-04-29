@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="868a37a9-b459-4f99-825b-964637d33cc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ImageCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ImagePointReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImagePointReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JsonImageModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stroke_modulo10_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ImageCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ImagePointReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImagePointReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JSONDocRepresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JSONDocRepresentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/DeviceData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/DeviceData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/MovementPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/MovementPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SampledPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SampledPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SessionData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SessionData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/operations/JsonReadingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/operations/JsonReadingTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +66,24 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\test\java\resources" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dataStructures" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\test\java\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BiotouchDatasetImageConverter">
+    <configuration name="BiotouchDatasetImageConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BiotouchDatasetImageConverter" />
+      <module name="BiotouchDBImgConverter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ImagePointReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ImagePointReader" />
       <module name="BiotouchDBImgConverter" />
@@ -69,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BiotouchDatasetImageConverter" />
         <item itemvalue="Application.ImagePointReader" />
       </list>
     </recent_temporary>
@@ -96,7 +121,11 @@
       <workItem from="1587393121893" duration="6549000" />
       <workItem from="1587545322979" duration="5165000" />
       <workItem from="1587654417653" duration="1581000" />
-      <workItem from="1587714446597" duration="7600000" />
+      <workItem from="1587714446597" duration="10010000" />
+      <workItem from="1587914431686" duration="5109000" />
+      <workItem from="1588000182266" duration="1258000" />
+      <workItem from="1588085912230" duration="2434000" />
+      <workItem from="1588147517179" duration="3645000" />
     </task>
     <servers />
   </component>
@@ -111,65 +140,69 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1585644069737" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585736987346">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1588149542112">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585736987346" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588149542112" />
     <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587025813497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1587025813497" />
-    <state x="566" y="271" width="403" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587715600536">
+    <state x="566" y="271" width="403" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587726176338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="566" y="271" width="403" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1587715600536" />
+    <state x="566" y="271" width="403" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1587726176338" />
     <state x="338" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586367174047">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1586367174047" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587725983514">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587725983514" />
     <state x="516" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587715854210">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1587715854210" />
-    <state width="1493" height="294" key="GridCell.Tab.0.bottom" timestamp="1587725818437">
+    <state width="1493" height="159" key="GridCell.Tab.0.bottom" timestamp="1588153175382">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587725818437" />
-    <state width="1493" height="294" key="GridCell.Tab.0.center" timestamp="1587725818437">
+    <state width="1493" height="159" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588153175382" />
+    <state width="1493" height="159" key="GridCell.Tab.0.center" timestamp="1588153175381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587725818437" />
-    <state width="1493" height="294" key="GridCell.Tab.0.left" timestamp="1587725818437">
+    <state width="1493" height="159" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
+    <state width="1493" height="159" key="GridCell.Tab.0.left" timestamp="1588153175381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587725818437" />
-    <state width="1493" height="294" key="GridCell.Tab.0.right" timestamp="1587725818437">
+    <state width="1493" height="159" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
+    <state width="1493" height="159" key="GridCell.Tab.0.right" timestamp="1588153175381">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587725818437" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587031153651">
+    <state width="1493" height="159" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587031153651" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1587031153651">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587929270824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587031153651" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1587031153651">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587929270824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587031153651" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1587031153651">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587929270824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587031153651" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587929270824" />
     <state x="598" y="70" key="Maven.ArtifactSearchDialog" timestamp="1587723183128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="598" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587723183128" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587714451071">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588147544228">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587714451071" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588147544228" />
   </component>
 </project>

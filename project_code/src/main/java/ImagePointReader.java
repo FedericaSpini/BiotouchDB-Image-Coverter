@@ -22,13 +22,4 @@ public class ImagePointReader {
         }
         return null;
     }
-
-    public static void main(String[] args){
-        ImagePointReader i = new ImagePointReader();
-        JSONDocRepresentation o = i.readSingleJson("c:\\test\\Federica.Spini.BLOCK LETTERS.0.json");;
-        ImageCreator imageCreator = ImageCreator.getInstance();
-        imageCreator.createImageFromJson(o);
-    }
-
-
 }

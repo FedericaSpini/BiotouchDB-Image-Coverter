@@ -95,7 +95,7 @@ public class ImageCreator
      * Given an image representation, creates the corrispondent image file
      * @param jsonImg
      */
-    public void createImageFromJson(JSONDocRepresentation jsonImg){
+    public void createImageFromJson(JSONDocRepresentation jsonImg, String destinationPath){
         try {
             int w = jsonImg.getSessionData().getDeviceData().getWidthPixels();
             int h = jsonImg.getSessionData().getDeviceData().getHeigthPixels();
@@ -114,7 +114,7 @@ public class ImageCreator
 
             //CHANGE THIS METHOD ACCORDING TO THE ONE TO CHANGE THE IMAGE CREATION MODALITIES
             createStrokeImage( jsonImg, g2);
-            File output1 = new File("stroke_img.png");
+            File output1 = new File(destinationPath);
             ImageIO.write(img, "bmp", output1);
 //            createStrokeImage( jsonImg, g2,5);
 //            File output2 = new File("stroke_modulo10_img.png");
