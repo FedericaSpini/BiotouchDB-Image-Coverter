@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="868a37a9-b459-4f99-825b-964637d33cc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IdsManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usersIdentificators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImagePointReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImagePointReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stroke_modulo10_img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImageCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImagePointReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImagePointReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JSONDocRepresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/JSONDocRepresentation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/DeviceData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/DeviceData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/MovementPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/MovementPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SampledPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SampledPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataStructures/SessionData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataStructures/SessionData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/operations/JsonReadingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/operations/JsonReadingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/Federica.Spini.BLOCK LETTERS.0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/Federica.Spini.BLOCK LETTERS.1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stroke_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,8 @@
       <workItem from="1587914431686" duration="5109000" />
       <workItem from="1588000182266" duration="1258000" />
       <workItem from="1588085912230" duration="2434000" />
-      <workItem from="1588147517179" duration="3645000" />
+      <workItem from="1588147517179" duration="4108000" />
+      <workItem from="1588323393622" duration="6266000" />
     </task>
     <servers />
   </component>
@@ -136,14 +131,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="70" key="#Project_Structure" timestamp="1585644069737">
+    <state x="361" y="70" key="#Project_Structure" timestamp="1588325655342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1585644069737" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1588149542112">
+    <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1588325655342" />
+    <state x="504" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588325888262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588149542112" />
+    <state x="504" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1588325888262" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1588326412469">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588326412469" />
     <state x="449" y="140" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587025813497">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -164,22 +163,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1587715854210" />
-    <state width="1493" height="159" key="GridCell.Tab.0.bottom" timestamp="1588153175382">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1588357112524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="159" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588153175382" />
-    <state width="1493" height="159" key="GridCell.Tab.0.center" timestamp="1588153175381">
+    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
+    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1588357112524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="159" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
-    <state width="1493" height="159" key="GridCell.Tab.0.left" timestamp="1588153175381">
+    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
+    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1588357112524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="159" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
-    <state width="1493" height="159" key="GridCell.Tab.0.right" timestamp="1588153175381">
+    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1588357112524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="159" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588153175381" />
+    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -200,9 +199,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="598" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587723183128" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588147544228">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588323414755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588147544228" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588323414755" />
   </component>
 </project>
