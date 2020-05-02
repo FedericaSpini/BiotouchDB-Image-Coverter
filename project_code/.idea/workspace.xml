@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="868a37a9-b459-4f99-825b-964637d33cc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/IdsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usersIdentificators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/Federica.Spini.BLOCK LETTERS.0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/Federica.Spini.BLOCK LETTERS.1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stroke_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IdsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IdsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usersIdentificators" beforeDir="false" afterPath="$PROJECT_DIR$/usersIdentificators" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +118,7 @@
       <workItem from="1588085912230" duration="2434000" />
       <workItem from="1588147517179" duration="4108000" />
       <workItem from="1588323393622" duration="6266000" />
+      <workItem from="1588432286559" duration="6153000" />
     </task>
     <servers />
   </component>
@@ -163,22 +161,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="259" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1587715854210" />
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom" timestamp="1588357112524">
+    <state width="723" height="223" key="GridCell.Tab.0.bottom" timestamp="1588444533578">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
-    <state width="1493" height="111" key="GridCell.Tab.0.center" timestamp="1588357112524">
+    <state width="723" height="223" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588444533578" />
+    <state width="723" height="223" key="GridCell.Tab.0.center" timestamp="1588444533578">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
-    <state width="1493" height="111" key="GridCell.Tab.0.left" timestamp="1588357112524">
+    <state width="723" height="223" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588444533578" />
+    <state width="723" height="223" key="GridCell.Tab.0.left" timestamp="1588444533578">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
-    <state width="1493" height="111" key="GridCell.Tab.0.right" timestamp="1588357112524">
+    <state width="723" height="223" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588444533578" />
+    <state width="723" height="223" key="GridCell.Tab.0.right" timestamp="1588444533578">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588357112524" />
+    <state width="723" height="223" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588444533578" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587929270824">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -199,9 +197,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="598" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587723183128" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588323414755">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588432398273">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588323414755" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588432398273" />
   </component>
 </project>

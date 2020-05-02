@@ -1,6 +1,7 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,9 @@ public class IdsManager {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println(data);
+                String[] nameId = data.split(":");
+                this.userId.put(nameId[0], nameId[1]);
+                System.out.println(data + this.userId);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -30,8 +33,24 @@ public class IdsManager {
         return new HashMap<>();
     }
 
+    public void addUserId(String name, String id){this.userId.put(name, id);}
+
     public HashMap<String, String> getUserId() {return userId;}
 
     public void setUserId(HashMap<String, String> userId) {this.userId = userId;}
+
+    public void updateUserIdentificationFile() throws IOException {
+//        new FileWriter("usersIdentificators", false).close();
+        FileWriter writer = new FileWriter("usersIdentificators", false);
+        for (Map.Entry me : this.userId.entrySet()) {
+            writer.write(me.getKey()+":"+me.getValue()+"\n");
+            System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue()+"\n");
+
+        }
+        writer.write("BENE");
+        writer.write("ho scritto tutto");
+        writer.close();
+
+    }
 
 }

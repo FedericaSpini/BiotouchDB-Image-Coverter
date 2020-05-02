@@ -101,6 +101,9 @@ public class BiotouchDatasetImageConverter {
         //IDSMANAGER TEST:
         IdsManager idsManager = new IdsManager();
         idsManager.readUserIdentificationFile();
+        idsManager.addUserId("gilia.livilli", "u43");
+        idsManager.updateUserIdentificationFile();
+
         
     }
 }
