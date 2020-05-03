@@ -52,6 +52,8 @@ public class BiotouchDatasetImageConverter {
 
     private void copyFolderAnonimized(File sourceFolder, File destinationFolder) throws IOException
     {
+        IdsManager idsManager = new IdsManager();
+
         if (sourceFolder.isDirectory())
         {
             if (!destinationFolder.exists())
@@ -64,10 +66,20 @@ public class BiotouchDatasetImageConverter {
             for (String file : files)
             {
                 File srcFile = new File(sourceFolder, file);
-                File destFile = new File(destinationFolder, file);
-
-                makeImgDataset(srcFile, destFile);
+                String newFileName = "";
+                if (file.contains(".")){
+                    String[] nameSurname;
+                    nameSurname = file.toLowerCase().split("\\.");
+                    String userName = nameSurname[0]+"."+nameSurname[1];
+                    idsManager.addUserId(userName);
+                    //ORA AGGIUNGE CORRETTAMENTE GLI ID AL FILE, MA LI DEVE PURE LEGGERE SE GIA' ESISTONO E AGGIORNARE E COPIARE I NOMI DELLE CARTELLE.
+                }
+                else{
+                    File destFile = new File(destinationFolder, newFileName);
+                    copyFolderAnonimized(srcFile, destFile);
+                }
             }
+            idsManager.updateUserIdentificationFile();
         }
         else
         {
@@ -99,10 +111,15 @@ public class BiotouchDatasetImageConverter {
 //        dbConverter.makeImgDataset(dbConverter.getDbFolderPath(),dbConverter.getNewDbFolderPath());
 
         //IDSMANAGER TEST:
-        IdsManager idsManager = new IdsManager();
-        idsManager.readUserIdentificationFile();
-        idsManager.addUserId("gilia.livilli", "u43");
-        idsManager.updateUserIdentificationFile();
+//        IdsManager idsManager = new IdsManager();
+//        idsManager.readUserIdentificationFile();
+//        idsManager.addUserId("gilia.livilli", "u43");
+//        idsManager.updateUserIdentificationFile();
+
+        //THIS CODE TEST HOW TO COPY AN ANONYMIZED VERSION OF A BIOTOUCH DATASET
+        BiotouchDatasetImageConverter dbConverter = new BiotouchDatasetImageConverter("d:\\test\\datasetTest", "d:\\test\\datasetTestAnonimo");
+        dbConverter.copyFolderAnonimized(dbConverter.getDbFolderPath(),dbConverter.getNewDbFolderPath());
+
 
         
     }

@@ -12,10 +12,15 @@ import java.util.Scanner;
 public class IdsManager {
 
     private HashMap<String, String> userId;
+    private int maxId;
 
-    public IdsManager(){this.userId = new HashMap<String, String>();}
+    public IdsManager(){
+        this.userId = new HashMap<String, String>();
+        maxId = 0;
+        readUserIdentificationFile();
+    }
 
-    public HashMap<String, String> readUserIdentificationFile(){
+    private HashMap<String, String> readUserIdentificationFile(){
         try {
             File myObj = new File("usersIdentificators");
             Scanner myReader = new Scanner(myObj);
@@ -23,6 +28,8 @@ public class IdsManager {
                 String data = myReader.nextLine();
                 String[] nameId = data.split(":");
                 this.userId.put(nameId[0], nameId[1]);
+                int newId = Integer.parseInt(nameId[1].substring(1));
+                if (newId>this.maxId)this.maxId=newId;
                 System.out.println(data + this.userId);
             }
             myReader.close();
@@ -33,7 +40,12 @@ public class IdsManager {
         return new HashMap<>();
     }
 
-    public void addUserId(String name, String id){this.userId.put(name, id);}
+    public void addUserId(String name){
+        if (!this.userId.containsKey(name)){
+            this.maxId++;
+            this.userId.put(name, "u"+this.maxId);
+        }
+    }
 
     public HashMap<String, String> getUserId() {return userId;}
 
@@ -45,12 +57,10 @@ public class IdsManager {
         for (Map.Entry me : this.userId.entrySet()) {
             writer.write(me.getKey()+":"+me.getValue()+"\n");
             System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue()+"\n");
-
         }
-        writer.write("BENE");
-        writer.write("ho scritto tutto");
+//        writer.write("BENE");
+//        writer.write("ho scritto tutto");
         writer.close();
-
     }
 
 }
