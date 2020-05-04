@@ -47,19 +47,23 @@ public class IdsManager {
         }
     }
 
+    public String getUserId(String userName){
+        if (!this.userId.containsKey(userName)){
+            addUserId(userName);
+        }
+        return this.userId.get(userName);
+    }
+
     public HashMap<String, String> getUserId() {return userId;}
 
     public void setUserId(HashMap<String, String> userId) {this.userId = userId;}
 
     public void updateUserIdentificationFile() throws IOException {
-//        new FileWriter("usersIdentificators", false).close();
         FileWriter writer = new FileWriter("usersIdentificators", false);
         for (Map.Entry me : this.userId.entrySet()) {
             writer.write(me.getKey()+":"+me.getValue()+"\n");
             System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue()+"\n");
         }
-//        writer.write("BENE");
-//        writer.write("ho scritto tutto");
         writer.close();
     }
 

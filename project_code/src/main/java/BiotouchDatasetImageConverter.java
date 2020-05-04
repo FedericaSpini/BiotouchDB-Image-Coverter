@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class BiotouchDatasetImageConverter {
@@ -66,18 +67,20 @@ public class BiotouchDatasetImageConverter {
             for (String file : files)
             {
                 File srcFile = new File(sourceFolder, file);
-                String newFileName = "";
+                String newFileName = srcFile.getName();
                 if (file.contains(".")){
                     String[] nameSurname;
                     nameSurname = file.toLowerCase().split("\\.");
                     String userName = nameSurname[0]+"."+nameSurname[1];
-                    idsManager.addUserId(userName);
+                    String userIdCode = idsManager.getUserId(userName);
+                    System.out.println(userIdCode);
+                    newFileName = userIdCode;
+
                     //ORA AGGIUNGE CORRETTAMENTE GLI ID AL FILE, MA LI DEVE PURE LEGGERE SE GIA' ESISTONO E AGGIORNARE E COPIARE I NOMI DELLE CARTELLE.
                 }
-                else{
-                    File destFile = new File(destinationFolder, newFileName);
-                    copyFolderAnonimized(srcFile, destFile);
-                }
+                File destFile = new File(destinationFolder, newFileName);
+                copyFolderAnonimized(srcFile, destFile);
+
             }
             idsManager.updateUserIdentificationFile();
         }
@@ -86,10 +89,15 @@ public class BiotouchDatasetImageConverter {
             if (getFileExtension(sourceFolder).equals("json")) {
                 ImagePointReader i = new ImagePointReader();
                 JSONDocRepresentation o = i.readSingleJson(sourceFolder.getPath());
-                ImageCreator imageCreator = ImageCreator.getInstance();
-                imageCreator.createImageFromJson(o, changeFilePathExtension(destinationFolder.getPath(),"png"));
+                JSONDocRepresentationAnonymous newDoc = new JSONDocRepresentationAnonymous(o, "uprova");
+//                ImageCreator imageCreator = ImageCreator.getInstance();
+//                imageCreator.createImageFromJson(o, changeFilePathExtension(destinationFolder.getPath(),"png"));
             }
         }
+    }
+
+    public JSONDocRepresentationAnonymous getAonymousJSON(JSONDocRepresentation doc, String id){
+        return new JSONDocRepresentationAnonymous(doc, id);
     }
 
     private static String getFileExtension(File file) {
