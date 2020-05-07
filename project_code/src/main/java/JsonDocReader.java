@@ -8,7 +8,7 @@ import java.io.Reader;
  * This class reads, from the json file representing an image, the coordinates of the move points
  * which compose the strokes of a word
  */
-public class ImagePointReader {
+public class JsonDocReader {
 
     public JSONDocRepresentation readSingleJson(String path){
         Gson gson = new Gson();

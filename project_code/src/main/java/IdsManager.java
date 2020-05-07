@@ -30,7 +30,6 @@ public class IdsManager {
                 this.userId.put(nameId[0], nameId[1]);
                 int newId = Integer.parseInt(nameId[1].substring(1));
                 if (newId>this.maxId)this.maxId=newId;
-                System.out.println(data + this.userId);
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -62,7 +61,6 @@ public class IdsManager {
         FileWriter writer = new FileWriter("usersIdentificators", false);
         for (Map.Entry me : this.userId.entrySet()) {
             writer.write(me.getKey()+":"+me.getValue()+"\n");
-            System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue()+"\n");
         }
         writer.close();
     }

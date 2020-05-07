@@ -1,6 +1,12 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class BiotouchDatasetImageConverter {
     private File dbFolderPath;
@@ -28,7 +34,6 @@ public class BiotouchDatasetImageConverter {
             if (!destinationFolder.exists())
             {
                 destinationFolder.mkdir();
-                System.out.println("Directory created :: " + destinationFolder);
             }
             String files[] = sourceFolder.list();
 
@@ -43,7 +48,7 @@ public class BiotouchDatasetImageConverter {
         else
         {
             if (getFileExtension(sourceFolder).equals("json")) {
-                ImagePointReader i = new ImagePointReader();
+                JsonDocReader i = new JsonDocReader();
                 JSONDocRepresentation o = i.readSingleJson(sourceFolder.getPath());
                 ImageCreator imageCreator = ImageCreator.getInstance();
                 imageCreator.createImageFromJson(o, changeFilePathExtension(destinationFolder.getPath(),"png"));
@@ -51,16 +56,16 @@ public class BiotouchDatasetImageConverter {
         }
     }
 
-    private void copyFolderAnonimized(File sourceFolder, File destinationFolder) throws IOException
+    private void copyFolderAnonimized(File sourceFolder, File destinationFolder, String id) throws IOException
     {
         IdsManager idsManager = new IdsManager();
+        String actualUserId = id;
 
         if (sourceFolder.isDirectory())
         {
             if (!destinationFolder.exists())
             {
                 destinationFolder.mkdir();
-                System.out.println("Directory created :: " + destinationFolder);
             }
             String files[] = sourceFolder.list();
 
@@ -71,15 +76,12 @@ public class BiotouchDatasetImageConverter {
                 if (file.contains(".")){
                     String[] nameSurname;
                     nameSurname = file.toLowerCase().split("\\.");
-                    String userName = nameSurname[0]+"."+nameSurname[1];
-                    String userIdCode = idsManager.getUserId(userName);
-                    System.out.println(userIdCode);
+                    String userIdCode = idsManager.getUserId(nameSurname[0]+"."+nameSurname[1]);
                     newFileName = userIdCode;
-
-                    //ORA AGGIUNGE CORRETTAMENTE GLI ID AL FILE, MA LI DEVE PURE LEGGERE SE GIA' ESISTONO E AGGIORNARE E COPIARE I NOMI DELLE CARTELLE.
+                    actualUserId = userIdCode;
                 }
                 File destFile = new File(destinationFolder, newFileName);
-                copyFolderAnonimized(srcFile, destFile);
+                copyFolderAnonimized(srcFile, destFile, actualUserId);
 
             }
             idsManager.updateUserIdentificationFile();
@@ -87,13 +89,27 @@ public class BiotouchDatasetImageConverter {
         else
         {
             if (getFileExtension(sourceFolder).equals("json")) {
-                ImagePointReader i = new ImagePointReader();
+                JsonDocReader i = new JsonDocReader();
                 JSONDocRepresentation o = i.readSingleJson(sourceFolder.getPath());
-                JSONDocRepresentationAnonymous newDoc = new JSONDocRepresentationAnonymous(o, "uprova");
-//                ImageCreator imageCreator = ImageCreator.getInstance();
-//                imageCreator.createImageFromJson(o, changeFilePathExtension(destinationFolder.getPath(),"png"));
+                JSONDocRepresentationAnonymous newDoc = new JSONDocRepresentationAnonymous(o, id);
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                FileWriter fileWriter = new FileWriter(destinationFolder.getParent().concat("\\"+changeNameWithId(sourceFolder.getName(), id)));
+                fileWriter.write(gson.toJson(newDoc));
+                fileWriter.close();
+            }
+            if (getFileExtension(sourceFolder).equals("png")) {
+
+                Files.copy(sourceFolder.toPath(), new File(destinationFolder.getParent().concat("\\"+changeNameWithId(sourceFolder.getName(), id))).toPath());
             }
         }
+    }
+
+    private String changeNameWithId(String fileName, String id){
+//        System.out.println(fileName);
+        String[] fileNameComponents = fileName.split("\\.");
+        for (int i = 2; i<fileNameComponents.length;i++){id+= ("."+fileNameComponents[i]);}
+//        System.out.println(id);
+        return id;
     }
 
     public JSONDocRepresentationAnonymous getAonymousJSON(JSONDocRepresentation doc, String id){
@@ -126,7 +142,7 @@ public class BiotouchDatasetImageConverter {
 
         //THIS CODE TEST HOW TO COPY AN ANONYMIZED VERSION OF A BIOTOUCH DATASET
         BiotouchDatasetImageConverter dbConverter = new BiotouchDatasetImageConverter("d:\\test\\datasetTest", "d:\\test\\datasetTestAnonimo");
-        dbConverter.copyFolderAnonimized(dbConverter.getDbFolderPath(),dbConverter.getNewDbFolderPath());
+        dbConverter.copyFolderAnonimized(dbConverter.getDbFolderPath(),dbConverter.getNewDbFolderPath(), "");
 
 
         
