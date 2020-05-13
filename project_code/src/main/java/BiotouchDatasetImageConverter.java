@@ -141,7 +141,7 @@ public class BiotouchDatasetImageConverter {
 //        idsManager.updateUserIdentificationFile();
 
         //THIS CODE TEST HOW TO COPY AN ANONYMIZED VERSION OF A BIOTOUCH DATASET
-        BiotouchDatasetImageConverter dbConverter = new BiotouchDatasetImageConverter("d:\\test\\datasetTest", "d:\\test\\datasetTestAnonimo");
+        BiotouchDatasetImageConverter dbConverter = new BiotouchDatasetImageConverter("d:\\test\\img_biotouch_2018_dataset", "d:\\test\\anonymous_img_biotouch_2018_dataset");
         dbConverter.copyFolderAnonimized(dbConverter.getDbFolderPath(),dbConverter.getNewDbFolderPath(), "");
 
 
