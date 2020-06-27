@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="868a37a9-b459-4f99-825b-964637d33cc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project_code.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Anonymizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetSimplifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiotouchDBImgConverter.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BiotouchDatasetImageConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BiotouchDatasetImageConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usersIdentificators" beforeDir="false" afterPath="$PROJECT_DIR$/usersIdentificators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/BiotouchDBImgConverter.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -22,29 +29,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1Zt1q3jwhPf8ggAETw8vZA6yiwJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -53,22 +53,30 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\test\java\resources" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dataStructures" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\test\java\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\main\java" />
+      <recent name="D:\universita\cache\codiceNuovo\BiotouchDB-Image-Coverter\project_code\src\test\java\resources" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.BiotouchDatasetImageConverter">
+  <component name="RunManager" selected="Application.BiotouchDatasetSimplifier">
     <configuration name="BiotouchDatasetImageConverter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BiotouchDatasetImageConverter" />
+      <module name="BiotouchDBImgConverter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BiotouchDatasetSimplifier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BiotouchDatasetSimplifier" />
       <module name="BiotouchDBImgConverter" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -83,8 +91,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BiotouchDatasetImageConverter" />
-        <item itemvalue="Application.JsonDocReader" />
+        <item itemvalue="Application.BiotouchDatasetSimplifier" />
       </list>
     </recent_temporary>
   </component>
@@ -126,20 +133,23 @@
       <workItem from="1588840499826" duration="7637000" />
       <workItem from="1589185319955" duration="3038000" />
       <workItem from="1589359692957" duration="5000" />
+      <workItem from="1589790035817" duration="200000" />
+      <workItem from="1593263103560" duration="308000" />
+      <workItem from="1593263437567" duration="2321000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="70" key="#Project_Structure" timestamp="1588325655342">
+    <state x="361" y="0" key="#Project_Structure" timestamp="1593264925717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1588325655342" />
+    <state x="361" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1593264925717" />
     <state x="504" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588325888262">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -208,9 +218,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="598" y="70" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587723183128" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589359690340">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589790185474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589359690340" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589790185474" />
   </component>
 </project>
